@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/DPlayer.min.css">
+    <style>
+        #DPlayer{
+            max-width: 960px;
+            height: 620px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <div id="dplayer"></div>
+   <script src="js/DPlayer.min.js"></script> 
+   <script src="js/md5.min.js"></script> 
+   <script>
+       var url='video/1.mp4'
+       var id=md5(url);
+       var api='https://dplayer.moerats.com/'
+       const dp = new DPlayer({
+    container: document.getElementById('dplayer'),
+    autoplay: true,
+    theme: '#FADFA3',
+    loop: true,
+    volume: 0.7,
+    mutex: true,
+    video: {
+        url: url,
+    },
+    danmaku: {
+        id:id,
+        api: api,
+        maximum: 1000,
+    },
+});
+</script>
+</body>
+</html>
